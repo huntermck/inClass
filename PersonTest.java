@@ -6,7 +6,7 @@ public class PersonTest {
 			String firstName = "";
 			String lastName = "Smith";
 			Person x = new Person(firstName, lastName);
-		} catch (NameException) {
+		} catch (NameException e) {
 			
 		}
 	}
