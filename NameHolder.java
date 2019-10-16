@@ -1,21 +1,23 @@
 
-public class NameHolder {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+public abstract class NameHolder {
+	protected String firstName;
+	
+	public abstract String describeSelf();
+	
+	@Override
+	public String toString() {
+		return "First name: " + firstName;
+	}
+	
+	protected void setFirstName(String firstName) throws NameException {
+		if (!firstName.isEmpty())
+			this.firstName = firstName;
+		else
+			throw new NameException("wrong");
 	}
 
-	public String getFirstName;
-
-	public void setFirstName(String temp2) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public String describeSelf() {
-		// TODO Auto-generated method stub
-		return null;
+	protected  String getFirstName() {
+		return new String(firstName);
 	}
 
 }

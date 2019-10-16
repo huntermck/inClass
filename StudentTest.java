@@ -1,19 +1,18 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class StudentTest {
+public class StudentTest {
 
 	private static final int INITIAL_RATING = 5;
 
 	@Before
 	public void setUp() throws Exception {
-
 	}
 
 	@Test
-	void testStudent() {
+	public void testStudent() {
 		try {
 			Student s = new Student();
 
@@ -27,23 +26,29 @@ class StudentTest {
 	}
 
 	@Test
-	void testCompareTo() throws NameException {
-		Student firstStudent = new Student("X", "Y", 2);
-		Student secondStudent = new Student("X", "Y", 3);
-
+	public void testCompareTo() throws NameException {
+		Student firstStudent = new Student("x", "Y", 2);
+		Student secondStudent = new Student("x", "Y", 3);
+		
 		int actual = secondStudent.compareTo(firstStudent);
 		int expected = 1;
-
+		
 		assertEquals(expected, actual);
-
-		Student thirdStudent = new Student("X", "Y", 5);
+		
+		Student student = new Student("x", "Y", 5);
 		
 		expected = -1;
-		actual = secondStudent.compareTo(thirdStudent);
+		actual = secondStudent.compareTo(student);
 		assertEquals(expected, actual);
-		
-	}
 
+
+		
+		
+		
+
+
+	}
+	
 	@Test
 	public void testGet() throws NameException {
 		Integer expected = 4;
